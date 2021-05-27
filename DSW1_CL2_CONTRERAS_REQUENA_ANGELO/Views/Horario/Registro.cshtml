@@ -1,0 +1,88 @@
+﻿@model DSW1_CL2_CONTRERAS_REQUENA_ANGELO.Models.Horario
+
+@{
+    ViewBag.Title = "Registro";
+}
+
+<h2 style="text-align:center">Registro al Curso</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codHorario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codHorario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomCurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomCurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codCurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codCurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecTerminio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecTerminio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vacantes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vacantes)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+    @using (Html.BeginForm("Registro", "Virtuales"))
+    {
+                @Html.Hidden("codHorario", Model.codHorario)
+
+                <span class="form-label">Dni</span>
+                @Html.TextBox("dni", "")
+                <br />
+                <span class="form-label">Nombre</span>
+                @Html.TextBox("nombre", "")
+                <br />
+
+                <span class="form-label">Email</span>
+                @Html.TextBox("email", "")
+                <br />
+
+                <span class="form-label">Telefono</span>
+                @Html.TextBox("telefono", "")
+                <br />
+                <p>
+                    <input type="submit" value="Ingresar" class="btn btn-default" />
+                    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default" })
+                </p>
+     }
+            @ViewBag.mensaje
+</div>
+
